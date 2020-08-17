@@ -1,22 +1,31 @@
 {
   "name": "tdd-es6",
   "version": "1.0.0",
-  "description": "",
+  "description": "JavaScript Data Structures and Algorithms",
   "main": "index.js",
   "scripts": {
-    "test": "npx mocha \"src/**/*.test.js\" --recursive --require @babel/register"
+    "test": "npx mocha \"src/**/*.test.js\" --recursive --require @babel/register",
+    "test:watch": "npx mocha \"src/**/*.test.js\" --recursive --require @babel/register --watch",
+    "coverage": "nyc --reporter=lcov --reporter=text npm run test"
   },
-  "keywords": [],
-  "author": "",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "keywords": [
+    "JavaScript Data Structures and Algorithms"
+  ],
+  "author": "Yulia Tarima",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
     "@babel/register": "^7.6.0",
     "chai": "^4.2.0",
-    "mocha": "^6.2.0"
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1"
   },
   "dependencies": {
+    "jest": "^26.4.0",
     "lodash": "^4.17.15"
   }
 }
