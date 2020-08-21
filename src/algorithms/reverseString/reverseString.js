@@ -9,6 +9,7 @@
 // --- Solutions
 
 // Solution: iterating through a string with for of loop
+// linear runtime
 const reverse = (str) => {
   let reversed = '';
 

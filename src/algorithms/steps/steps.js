@@ -31,8 +31,8 @@ function steps(n, row = 0, stair = '') {
     steps(n, row, stair + add);
 }
 
-module.exports = steps;
 
+// N^2 quadratic runtime
 // function steps(n) {
 //   for (let row = 0; row < n; row++) {
 //     let stair = '';
@@ -48,3 +48,5 @@ module.exports = steps;
 //     console.log(stair);
 //   }
 // }
+
+module.exports = steps;
