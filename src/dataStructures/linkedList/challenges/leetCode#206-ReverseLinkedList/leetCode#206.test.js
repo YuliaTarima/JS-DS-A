@@ -4,7 +4,7 @@ test('reverseList function exists', () => {
     expect(reverseList).toBeDefined();
 });
 
-// test('reverseList(2,3) should return 5', () => {
+// test('reverseList should return 5', () => {
 //     expect(reverseList('2', '3')).toEqual('5');
 // });
 

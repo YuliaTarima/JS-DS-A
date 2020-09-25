@@ -16,24 +16,64 @@ function ListNode(val, next) {
  * @param {ListNode} head
  * @return {ListNode}
  */
-const reverseList = function(head) {
+// // iterative approach
+// // Time complexity : O(n)
+// // Space complexity : O(1)
+// const reverseList = function(head) {
+//
+//     let prev = null; // the tail
+//
+//     while (head) {
+//         // move nextNode one level up
+//         const nextNode = head.next;
+//
+//         // point head's .next to the prev (null for first iteration)
+//         head.next = prev;
+//
+//         // move prev one level up
+//         prev = head;
+//
+//         // move head one level up
+//         head = nextNode;
+//     }
+//
+//     return prev
+// };
 
-    let prev = null; // the tail
+// recursive approach
+// Time complexity : O(n)
+// Space complexity : O(n).
+// The extra space comes from implicit stack space due to recursion.
+// The recursion could go up to nn levels deep.
+// Runtime: 80 ms, faster than 70.16% of JavaScript online submissions for Reverse Linked List.
+// Memory Usage: 38.9 MB, less than 31.99% of JavaScript online submissions for Reverse Linked List.
+function ListNode(val, next) {
+    this.val = (val === undefined ? 0 : val)
+    this.next = (next === undefined ? null : next)
+}
 
-    while (head) {
-        // move nextNode one level up
-        const nextNode = head.next;
+const tail = new ListNode('tail', null);
+const node3 = new ListNode('third', tail);
+const node2 = new ListNode('second', node3);
+const head = new ListNode('head', node2);
+//  console.log(node1)
+//  console.log(node2)
+//  console.log(node3)
+//  console.log(node4)
 
-        // point head's .next to the prev (null for first iteration)
-        head.next = prev;
+const reverseList = function (head) {
 
-        // move prev one level up
-        prev = head;
+    if (head === null || head.next === null) return head;
+    console.dir('I am current head inside', head);
 
-        // move head one level up
-        head = nextNode;
-    }
+    let reversedList = reverseList(head.next);
+    console.dir('I am current head outside', head);
 
-    return prev
+    head.next.next = head;
+    head.next = null;
+    console.log(reversedList);
+    return reversedList;
 };
+reverseList(head);
+
 module.exports = reverseList;
