@@ -1,5 +1,7 @@
 import {describe} from "@jest/globals";
 
+import 'regenerator-runtime/runtime';
+
 const L = require('./linkedList');
 const List = L.LinkedList;
 const Node = L.Node;
