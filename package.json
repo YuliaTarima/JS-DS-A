@@ -9,7 +9,8 @@
     "coverage": "nyc --reporter=lcov --reporter=text npm run test"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+         "setupFilesAfterEnv": ["<rootDir>/src/setupTests.js"]
   },
   "keywords": [
     "JavaScript Data Structures and Algorithms"
