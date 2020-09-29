@@ -10,7 +10,9 @@
   },
   "jest": {
     "testEnvironment": "node",
-         "setupFilesAfterEnv": ["<rootDir>/src/setupTests.js"]
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
+    ]
   },
   "keywords": [
     "JavaScript Data Structures and Algorithms"
@@ -28,6 +30,7 @@
   "dependencies": {
     "@jest/globals": "^26.4.2",
     "jest": "^26.4.0",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "regenerator-runtime": "^0.13.7"
   }
 }
